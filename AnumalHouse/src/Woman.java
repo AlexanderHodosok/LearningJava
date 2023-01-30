@@ -1,11 +1,35 @@
 public class Woman {
 
-    public static void Givecatfood() {
-        System.out.println("Девушка взяла 1 кг корма из кладовки");
-        Storage.Minuscatfood();
+    public Storage[] storages;
+
+    public Woman(int countOfStorages) {
+        storages = new Storage[countOfStorages];
     }
-    public static void Buycatfood() {
-        System.out.println("Девушка купила 5 кг кошачьего корма и пополнила ими кладовку");
-        Storage.Pluscatfood();
+
+    public void initStorages(Storage newStorage) {
+        for (int i = 0; i < storages.length; i++) {
+            storages[i] = newStorage;
+        }
+    }
+
+    public void giveFood() {
+        for (int i = 0; i < storages.length; i++) {
+
+            if (storages[i].catFood.kilos > 0) {
+                storages[i].catFood.kilos -= 1;
+                System.out.println("Питомец накормлен");
+                return;
+            } else {
+                buyFood(storages[i]);
+                System.out.println("Кладовка пополнена");
+                storages[i].catFood.kilos -= 1;
+                System.out.println("Питомец накормлен");
+            }
+        }
+
+    }
+
+    public void buyFood(Storage storage) {
+        storage.catFood.kilos += 5;
     }
 }

@@ -1,9 +1,20 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
 
     public static void main(String[] args) {
         Task1();
         Task4();
         Task3();
+        Task2();
+
+
+
+
+
+
+
 
     }
 
@@ -40,5 +51,30 @@ public class Main {
             x = replace;
         }
         System.out.println(x);
+    }
+
+    public static void Task2() {
+        String a = "asd11as145361d";
+        StringBuilder stringBuilder = new StringBuilder(a);
+
+
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher(a);
+        m.find();
+        String result = a.substring(m.start(), m.end());
+        System.out.println(result);
+
+        m.find();
+
+        result = a.substring(m.start(), m.end());
+        System.out.println(result);
+    }
+    public static String reverseString(String s) {
+        String r = "level";
+        for (int i = s.length() - 1; i >= 0; --i) r += s.charAt(i);
+        return r;
+    }
+    public static Boolean isPalindrome(String s) {
+        return s.equals(reverseString(s));
     }
 }

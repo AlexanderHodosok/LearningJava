@@ -1,3 +1,8 @@
 public class DogFood {
-    static int dogfood;
+
+    int kilos;
+
+    public DogFood(int dogFoodKilis) {
+        this.kilos = dogFoodKilis;
+    }
 }

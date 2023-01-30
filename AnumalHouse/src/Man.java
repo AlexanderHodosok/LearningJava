@@ -1,11 +1,22 @@
 public class Man {
-    public static void Givedogfood() {
-        System.out.println("Парень взял 1 кг собачьего корма из кладовки");
-        Storage.Minusdogfood();
-    }
-    public static void Buydogfood() {
-        System.out.println("Парень купил 5 кг собачьего корма и пополнил ими кладовку");
-        Storage.Plusdogfood();
+
+    int countOfStorages;
+    public Storage[] storages = new Storage[countOfStorages];
+
+    public void giveFood() {
+        for (Storage storage : storages) {
+            if (storage.dogFood.kilos > 0) {
+                storage.dogFood.kilos -= 1;
+                System.out.println("Питомец накормлен");
+            } else {
+                buyFood(storage);
+                storage.dogFood.kilos -= 1;
+                System.out.println("Питомец накормлен");
+            }
+        }
     }
 
+    public void buyFood(Storage storage) {
+        storage.dogFood.kilos += 10;
+    }
 }

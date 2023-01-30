@@ -1,3 +1,9 @@
 public class CatFood {
-    static int catfood;
+
+    int kilos;
+
+    public CatFood(int catFoodKilos){
+        this.kilos = catFoodKilos;
+    }
+
 }
