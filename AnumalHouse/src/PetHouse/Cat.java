@@ -1,6 +1,7 @@
-public class Cat {
+package PetHouse;
 
-    public Woman master;
+public class Cat extends Pet {
+
 
     public Cat(Woman master) {
         this.master = master;

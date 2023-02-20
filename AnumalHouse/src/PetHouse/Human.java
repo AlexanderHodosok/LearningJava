@@ -1,8 +1,10 @@
-public class Woman {
+package PetHouse;
+
+public abstract class Human {
 
     public Storage[] storages;
 
-    public Woman(int countOfStorages) {
+    public Human(int countOfStorages) {
         storages = new Storage[countOfStorages];
     }
 
@@ -11,7 +13,6 @@ public class Woman {
             storages[i] = newStorage;
         }
     }
-
     public void giveFood() {
         for (int i = 0; i < storages.length; i++) {
 

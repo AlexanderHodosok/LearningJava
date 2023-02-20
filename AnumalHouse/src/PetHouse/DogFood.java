@@ -1,3 +1,5 @@
+package PetHouse;
+
 public class DogFood {
 
     int kilos;

@@ -1,3 +1,5 @@
+package PetHouse;
+
 public class Storage {
 
     public DogFood dogFood;
